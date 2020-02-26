@@ -1,6 +1,6 @@
 # LonneyTunes-Game
 ## Site Picture
-![fitness]()
+![game]()
 
 
 ## Technologies Used
