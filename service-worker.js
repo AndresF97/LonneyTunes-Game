@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/looneytunes/images/e/e5/Gunfade.gif/revision/latest/scale-to-width-down/250/precache-manifest.2bae70c741bc83b684ec0dd410f2657f.js"
+  "/LonneyTunes-Game/precache-manifest.b5ee6f8cced5b46bf6a717e16d679bb4.js"
 );
 
 self.addEventListener('message', (event) => {
@@ -33,7 +33,7 @@ workbox.core.clientsClaim();
 self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute(workbox.precaching.getCacheKeyForURL("/looneytunes/images/e/e5/Gunfade.gif/revision/latest/scale-to-width-down/250/index.html"), {
+workbox.routing.registerNavigationRoute(workbox.precaching.getCacheKeyForURL("/LonneyTunes-Game/index.html"), {
   
   blacklist: [/^\/_/,/\/[^/?]+\.[^/]+$/],
 });
