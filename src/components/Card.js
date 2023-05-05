@@ -1,6 +1,5 @@
-import React, {useEffect, useState, useRef} from "react";
+import React, {useEffect, useState} from "react";
 import lonneyCards from "./looney.json"
-import userEvent from "@testing-library/user-event";
 
 // TO DO:
 // SCORING SYSTEM
@@ -20,17 +19,25 @@ function Card(){
         randomArrTwo:[],
     })
     let [timer, setTimer] = useState(10); // 25 minutes
-    const [start, setStart] = useState(true);
-    const tick = useRef(); 
+  
    const clickedCard =(event)=>{
         console.log(event.target)
         
     }
     const arrRandomazier = ()=>{
-        gameLogic.randomArrOne.push(lonneyCards)
-        gameLogic.randomArrTwo.push(...lonneyCards)
-        console.log(gameLogic.randomArrOne)
-        console.log(gameLogic.randomArrTwo)
+      let clonedLoneyCards = lonneyCards
+      Array.prototype.random = function(){
+        let that = this.slice();
+        let result = []
+        this.forEach(()=>{
+          result.push(that.splice(Math.floor(Math.random()*that.length),1)[0])
+        })
+        return result
+      }
+      setGameLogic(gameLogic.randomArrOne.push(...clonedLoneyCards.random()))
+      setGameLogic(gameLogic.randomArrTwo.push(...clonedLoneyCards.random()))
+      console.log(gameLogic.randomArrOne)
+      console.log(gameLogic.randomArrTwo)
     }
     const startTimer = ()=>{
       let countDown = setInterval(() => { // <-- set tick ref current value
@@ -45,7 +52,7 @@ function Card(){
   }
 
     useEffect(() => {
-        startTimer()
+        // startTimer()
         arrRandomazier();
       }, []);
 ;
@@ -55,7 +62,7 @@ function Card(){
         <div id="timer">{timer}</div>
         {lonneyCards.map(item=>{
             return(
-            <section onClick={(event)=>{clickedCard(event)}} data-cardname={item.name} data-cardid={item.id}>
+            <section key={item.id} onClick={(event)=>{clickedCard(event)}} data-cardname={item.name} data-cardid={item.id}>
                 <h1>{item.name}</h1>
                 <img src={`${item.image}`}/>
             </section>
