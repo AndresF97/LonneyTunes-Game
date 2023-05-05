@@ -26,8 +26,14 @@ function Card(){
         console.log(event.target)
         
     }
+    const arrRandomazier = ()=>{
+        gameLogic.randomArrOne.push(lonneyCards)
+        // gameLogic.randomArrTwo.push(...lonneyCards)
+        console.log(gameLogic.randomArrOne)
+        // console.log(gameLogic.randomArrTwo)
+    }
+
     useEffect(() => {
-    
         if (start) {
           tick.current = setInterval(() => { // <-- set tick ref current value
             if(timer < 0){
@@ -45,6 +51,9 @@ function Card(){
         return () => clearInterval(tick.current); // <-- clear on unmount!
       }, [start]);
 
+      useEffect(() => {
+        arrRandomazier();
+      }, [true]);
     return (
         <>
         <h1>Single Card</h1>
