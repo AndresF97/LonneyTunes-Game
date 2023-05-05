@@ -3,9 +3,9 @@ import lonneyCards from "./looney.json"
 import userEvent from "@testing-library/user-event";
 
 // TO DO:
-// CREATE A TIMER
 // SCORING SYSTEM
-// CREATE TWO RANDOMISE ARRAYS
+// CREATE TWO RANDOMISE ARRAYS [TO DO NEXT]
+// ADD STYLING TO HIDE CARD AND THEN UPADTE ONCE CLICKED
 // ADD STYLING FOR EACH CARD
 // Future developement:
 // PvP (take turns and time)
@@ -28,32 +28,27 @@ function Card(){
     }
     const arrRandomazier = ()=>{
         gameLogic.randomArrOne.push(lonneyCards)
-        // gameLogic.randomArrTwo.push(...lonneyCards)
+        gameLogic.randomArrTwo.push(...lonneyCards)
         console.log(gameLogic.randomArrOne)
-        // console.log(gameLogic.randomArrTwo)
+        console.log(gameLogic.randomArrTwo)
     }
+    const startTimer = ()=>{
+      let countDown = setInterval(() => { // <-- set tick ref current value
+      if(timer < 0){
+          clearInterval(countDown)
+          return
+      }else{
+      setTimer(timer--);
+      console.log(timer)
+      }
+    }, 1000);
+  }
 
     useEffect(() => {
-        if (start) {
-          tick.current = setInterval(() => { // <-- set tick ref current value
-            if(timer < 0){
-                clearInterval(tick.current)
-                return
-            }else{
-            setTimer(timer--);
-            console.log(timer)
-            }
-          }, 1000);
-        } else {
-          clearInterval(tick.current); // <-- access tick ref current value
-        }
-    
-        return () => clearInterval(tick.current); // <-- clear on unmount!
-      }, [start]);
-
-      useEffect(() => {
+        startTimer()
         arrRandomazier();
-      }, [true]);
+      }, []);
+;
     return (
         <>
         <h1>Single Card</h1>
