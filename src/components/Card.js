@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import lonneyCards from "./looney.json"
 
 // TO DO:
+// GOTTA WORK WITH SIZING BUT PRETTY GOOD
 // SCORING SYSTEM
 // ADD STYLING TO HIDE CARD AND THEN UPADTE ONCE CLICKED
 // ADD STYLING FOR EACH CARD
@@ -14,8 +15,6 @@ import lonneyCards from "./looney.json"
 function Card() {
   const [gameLogic, setGameLogic] = useState({
     score: 0,
-    // randomArrOne: [],
-    randomArrTwo: [],
   })
   let [randomArrOne, setArrOne] = useState([])
   let [randomArrTwo, setArrTwo] = useState([])
@@ -69,7 +68,7 @@ function Card() {
             </section>
             <section className="h-auto max-w-full text-center" key={randomArrTwo[i]?.id+ "Two"} onClick={(event) => { clickedCard(event) }} data-card-name={randomArrTwo[i]?.name} data-card-id={randomArrTwo[i]?.id}>
               <h1>{randomArrTwo[i]?.name}</h1>
-              <img className="d-none"src={`${randomArrTwo[i]?.image}`} />
+              <img src={`${randomArrTwo[i]?.image}`} />
             </section>
           </>
         )
