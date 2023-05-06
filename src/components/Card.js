@@ -21,8 +21,11 @@ function Card() {
   let [timer, setTimer] = useState(10); // 25 minutes
 
   const clickedCard = (event) => {
-    console.log(event.target)
-
+    event.stopPropagation()
+    setInterval(()=>{
+      event.target.classList.add("hide")
+    },1000)
+    event.target.classList.remove("hide")
   }
     let clonedLoneyCards = lonneyCards
     Array.prototype.random = function () {
@@ -58,18 +61,22 @@ function Card() {
     <>
       <h1>Single Card</h1>
       <div id="timer">{timer}</div>
-      <div className="grid grid-cols-2 md:grid-cols-7 gap-4">
+      <div className="grid grid-cols-2 md:grid-cols-7 gap-4 dark:bg-gray-900 ">
       {lonneyCards.map((item, i) => {
         return (
           <>
-            <section className="h-auto max-w-full text-center" key={randomArrOne[i]?.i +"One"} onClick={(event) => { clickedCard(event) }} data-card-name={randomArrOne[i]?.name} data-card-id={randomArrOne[i]?.id}>
+            <div className="bg-blue-700">
+            <section className="h-auto max-w-full text-center hide" key={randomArrOne[i]?.i +"One"} onClick={(event) => { clickedCard(event) }} data-card-name={randomArrOne[i]?.name} data-card-id={randomArrOne[i]?.id}>
               <h1>{randomArrOne[i]?.name}</h1>
               <img className="m-0" src={`${randomArrOne[i]?.image}`} />
             </section>
-            <section className="h-auto max-w-full text-center" key={randomArrTwo[i]?.id+ "Two"} onClick={(event) => { clickedCard(event) }} data-card-name={randomArrTwo[i]?.name} data-card-id={randomArrTwo[i]?.id}>
+            </div>
+            <div className="bg-blue-700">
+            <section className="h-auto max-w-full text-center hide" key={randomArrTwo[i]?.id+ "Two"} onClick={(event) => { clickedCard(event) }} data-card-name={randomArrTwo[i]?.name} data-card-id={randomArrTwo[i]?.id}>
               <h1>{randomArrTwo[i]?.name}</h1>
               <img src={`${randomArrTwo[i]?.image}`} />
             </section>
+            </div>
           </>
         )
       })}
