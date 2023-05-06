@@ -3,7 +3,6 @@ import lonneyCards from "./looney.json"
 
 // TO DO:
 // SCORING SYSTEM
-// CREATE TWO RANDOMISE ARRAYS [TO DO NEXT]
 // ADD STYLING TO HIDE CARD AND THEN UPADTE ONCE CLICKED
 // ADD STYLING FOR EACH CARD
 // Future developement:
@@ -26,7 +25,6 @@ function Card() {
     console.log(event.target)
 
   }
-  // const arrRandomazier = () => {
     let clonedLoneyCards = lonneyCards
     Array.prototype.random = function () {
       let that = this.slice();
@@ -36,12 +34,6 @@ function Card() {
       })
       return result
     }
-    // setGameLogic(gameLogic.randomArrOne.push(...clonedLoneyCards.random()))
-    // gameLogic.randomArrOne.push(...clonedLoneyCards.random())
-    // setGameLogic(gameLogic.randomArrTwo.push(...clonedLoneyCards.random()))
-    // console.log(gameLogic.randomArrOne)
-    // console.log(gameLogic.randomArrTwo)
-  // }
   const startTimer = () => {
     let countDown = setInterval(() => { // <-- set tick ref current value
       if (timer < 0) {
@@ -61,27 +53,28 @@ function Card() {
     
     setArrOne(clonedLoneyCards.random())
     setArrTwo(clonedLoneyCards.random())
-    console.log(randomArrOne)
   }, []);
 
   return (
     <>
       <h1>Single Card</h1>
       <div id="timer">{timer}</div>
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
       {lonneyCards.map((item, i) => {
         return (
           <>
-            <section key={item.id} onClick={(event) => { clickedCard(event) }} data-cardname={item.name} data-cardid={item.id}>
+            <section className="h-auto max-w-full text-center" key={randomArrOne[i]?.i +"One"} onClick={(event) => { clickedCard(event) }} data-card-name={randomArrOne[i]?.name} data-card-id={randomArrOne[i]?.id}>
               <h1>{randomArrOne[i]?.name}</h1>
-              <img src={`${randomArrOne[i]?.image}`} />
+              <img className="m-0" src={`${randomArrOne[i]?.image}`} />
             </section>
-            <section key={item.id} onClick={(event) => { clickedCard(event) }} data-cardname={item.name} data-cardid={item.id}>
+            <section className="h-auto max-w-full text-center" key={randomArrTwo[i]?.id+ "Two"} onClick={(event) => { clickedCard(event) }} data-card-name={randomArrTwo[i]?.name} data-card-id={randomArrTwo[i]?.id}>
               <h1>{randomArrTwo[i]?.name}</h1>
-              <img src={`${randomArrTwo[i]?.image}`} />
+              <img className="d-none"src={`${randomArrTwo[i]?.image}`} />
             </section>
           </>
         )
       })}
+      </div>
     </>
   )
 }
