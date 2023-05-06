@@ -2,8 +2,7 @@ import React, { useEffect, useState } from "react";
 import lonneyCards from "./looney.json"
 
 // TO DO:
-// SCORING SYSTEM
-// ADD STYLING TO HIDE CARD AND THEN UPADTE ONCE CLICKED
+// STYLING!!!!!!!
 // ADD STYLING FOR EACH CARD
 // Future developement:
 // PvP (take turns and time)
