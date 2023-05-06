@@ -15,11 +15,11 @@ import lonneyCards from "./looney.json"
 
 
 function Card() {
-  let [score, setScore] =useState(0)
+  let [score, setScore] =useState(10)
   let [randomArrOne, setArrOne] = useState([])
   let [randomArrTwo, setArrTwo] = useState([])
   let [currentClicked,setCurrentClick] = useState('')
-  let [timer, setTimer] = useState(5); // 25 minutes
+  let [timer, setTimer] = useState(10); // 25 minutes
 
   const clickedCard = (event) => {
 
@@ -36,10 +36,8 @@ function Card() {
         document.querySelector(`[data-card-id="${currentClicked}"]`).parentElement.classList.add("destroy");
         setCurrentClick('')
       }
-      console.log(event.target.parentElement)
-      console.log(document.querySelector(`[data-card-id="${currentClicked}"]`).parentElement)
+
     }
-    console.log('score',score)
   }
     let clonedLoneyCards = lonneyCards
     Array.prototype.random = function () {
