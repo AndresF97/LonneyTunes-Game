@@ -16,29 +16,9 @@
     "image": "https://vignette.wikia.nocookie.net/looneytunes/images/8/88/Sylvester_the_Cat.png/revision/latest?cb=20130119144206"
   },
   {
-    "id": 4,
-    "name": "Twetty Bird",
-    "image": "https://vignette.wikia.nocookie.net/looneytunes/images/e/e7/Tweety1.gif/revision/latest/scale-to-width-down/250?cb=20140406233615"
-  },
-  {
-    "id": 5,
-    "name": "wile.e cayote",
-    "image": "https://vignette.wikia.nocookie.net/looneytunes/images/7/7f/Coyote.gif/revision/latest?cb=20060219181853"
-  },
-  {
     "id": 6,
     "name": "Daffy Duck",
     "image": "https://vignette.wikia.nocookie.net/looneytunes/images/8/88/Daffy-1-.jpg/revision/latest?cb=20130825180446"
-  },
-  {
-    "id": 7,
-    "name": "Marvin The Martin",
-    "image": "https://vignette.wikia.nocookie.net/looneytunes/images/a/a7/307px-Marvin_the_Martian.gif/revision/latest/scale-to-width-down/150?cb=20130824011616"
-  },
-  {
-    "id": 8,
-    "name": "Road Runner",
-    "image": "https://vignette.wikia.nocookie.net/looneytunes/images/1/13/Looneytunes-roadrunner.gif/revision/latest?cb=20130303015934"
   },
   {
     "id": 9,
@@ -54,10 +34,5 @@
     "id": 11,
     "name": "Yosemity Sam",
     "image": "https://vignette.wikia.nocookie.net/looneytunes/images/8/8c/Yosemite_Sam.png/revision/latest/scale-to-width-down/250?cb=20180523161541"
-  },
-  {
-    "id": 12,
-    "name": "Elmer Fud",
-    "image": "https://vignette.wikia.nocookie.net/looneytunes/images/e/e5/Gunfade.gif/revision/latest/scale-to-width-down/250?cb=20110827193619"
   }
 ]
