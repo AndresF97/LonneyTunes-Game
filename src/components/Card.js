@@ -2,17 +2,20 @@ import React, { useEffect, useState } from "react";
 import lonneyCards from "./looney.json"
 
 // TO DO:
-// SCORING SYSTEM
-// ADD STYLING TO HIDE CARD AND THEN UPADTE ONCE CLICKED
+// STYLING!!!!!!!
 // ADD STYLING FOR EACH CARD
 // Future developement:
 // PvP (take turns and time)
 // Single player
 // AI chatgpt or another ai that can be implemented in React
+// STYLING NOTES:
+// - Look at the other website for reference
+// - bring some lonney logos
+// - get better images
 
 
 function Card() {
-  let [score, setScore] =useState(0)
+  let [score, setScore] =useState(10)
   let [randomArrOne, setArrOne] = useState([])
   let [randomArrTwo, setArrTwo] = useState([])
   let [currentClicked,setCurrentClick] = useState('')
@@ -33,10 +36,8 @@ function Card() {
         document.querySelector(`[data-card-id="${currentClicked}"]`).parentElement.classList.add("destroy");
         setCurrentClick('')
       }
-      console.log(event.target.parentElement)
-      console.log(document.querySelector(`[data-card-id="${currentClicked}"]`).parentElement)
+
     }
-    console.log('score',score)
   }
     let clonedLoneyCards = lonneyCards
     Array.prototype.random = function () {
@@ -51,6 +52,7 @@ function Card() {
     let countDown = setInterval(() => { 
       if (timer < 0) {
         clearInterval(countDown)
+        gameOver()
         return
       } else {
         setTimer(timer--);
@@ -58,9 +60,13 @@ function Card() {
       }
     }, 1000);
   }
+  const gameOver = ()=>{
+    document.getElementById('gameContainer').innerHTML=""
+    document.getElementById('gameContainer').innerHTML="<h1>Game over!</h1>"
+  }
 
   useEffect(() => {
-    // startTimer()
+    startTimer()
     setArrOne(clonedLoneyCards.random())
     setArrTwo(clonedLoneyCards.random())
   }, []);
@@ -70,7 +76,7 @@ function Card() {
       <h1>Quick find the matches</h1>
       <div id="timer">Timer:{timer}</div>
       <div>Score:{score}</div>
-      <div className="grid grid-cols-2 md:grid-cols-7 gap-4 dark:bg-gray-900 ">
+      <div className="grid grid-cols-2 md:grid-cols-7 gap-4 dark:bg-gray-900" id="gameContainer">
       {lonneyCards.map((item, i) => {
         return (
           <>
