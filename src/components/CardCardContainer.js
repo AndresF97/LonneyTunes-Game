@@ -5,7 +5,6 @@ function CardContainer(){
 
     return (
         <>
-        <h1> Cards display</h1>
         <Card/>
         </>
     )

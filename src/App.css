@@ -30,6 +30,9 @@
 .hide{
   opacity: 0;
 }
+.destroy{
+  display: none;
+}
 img, h1{
   pointer-events: none;
 }
