@@ -8,6 +8,10 @@ import lonneyCards from "./looney.json"
 // PvP (take turns and time)
 // Single player
 // AI chatgpt or another ai that can be implemented in React
+// STYLING NOTES:
+// - Look at the other website for reference
+// - bring some lonney logos
+// - get better images
 
 
 function Card() {
@@ -15,7 +19,7 @@ function Card() {
   let [randomArrOne, setArrOne] = useState([])
   let [randomArrTwo, setArrTwo] = useState([])
   let [currentClicked,setCurrentClick] = useState('')
-  let [timer, setTimer] = useState(10); // 25 minutes
+  let [timer, setTimer] = useState(5); // 25 minutes
 
   const clickedCard = (event) => {
 
@@ -50,6 +54,7 @@ function Card() {
     let countDown = setInterval(() => { 
       if (timer < 0) {
         clearInterval(countDown)
+        gameOver()
         return
       } else {
         setTimer(timer--);
@@ -57,9 +62,13 @@ function Card() {
       }
     }, 1000);
   }
+  const gameOver = ()=>{
+    document.getElementById('gameContainer').innerHTML=""
+    document.getElementById('gameContainer').innerHTML="<h1>Game over!</h1>"
+  }
 
   useEffect(() => {
-    // startTimer()
+    startTimer()
     setArrOne(clonedLoneyCards.random())
     setArrTwo(clonedLoneyCards.random())
   }, []);
@@ -69,7 +78,7 @@ function Card() {
       <h1>Quick find the matches</h1>
       <div id="timer">Timer:{timer}</div>
       <div>Score:{score}</div>
-      <div className="grid grid-cols-2 md:grid-cols-7 gap-4 dark:bg-gray-900 ">
+      <div className="grid grid-cols-2 md:grid-cols-7 gap-4 dark:bg-gray-900" id="gameContainer">
       {lonneyCards.map((item, i) => {
         return (
           <>
