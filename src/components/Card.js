@@ -4,7 +4,7 @@ import lonneyCards from "./looney.json"
 // TO DO:
 // STYLING!!!!!!!
 // ADD STYLING FOR EACH CARD
-
+// ADD ICONS
 // Future developement:
 // PvP (take turns and time)
 // Single player
