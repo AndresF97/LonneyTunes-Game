@@ -20,7 +20,7 @@ function Card() {
   let [randomArrOne, setArrOne] = useState([])
   let [randomArrTwo, setArrTwo] = useState([])
   let [currentClicked,setCurrentClick] = useState('')
-  let [timer, setTimer] = useState(5); // 25 minutes
+  let [timer, setTimer] = useState(20); // 25 minutes
 
   const clickedCard = (event) => {
 
@@ -100,19 +100,23 @@ function Card() {
       <div id="timer">Timer:{timer}</div>
       <div>Score:{score}</div>
       <div className="grid grid-cols-2 md:grid-cols-7 gap-4 dark:bg-gray-900" id="gameContainer">
-      {lonneyCards.map((item, i) => {
+      {randomArrOne?.map((item, i) => {
+        
+        const imageOne = require(`${randomArrOne[i]?.image}`)
+        const imageTwo = require(`${randomArrTwo[i]?.image}`)
         return (
           <>
             <div className="bg-blue-700">
             <section className="h-auto max-w-full text-center" key={randomArrOne[i]?.i +"One"} onClick={(event) => { clickedCard(event) }} data-card-name={randomArrOne[i]?.name} data-card-id={randomArrOne[i]?.id}>
               <h1>{randomArrOne[i]?.name}</h1>
-              <img className="m-0" src={`${randomArrOne[i]?.image}`} />
+              
+              <img className="m-0" src={require(`${randomArrOne[i]?.image}`)} />
             </section>
             </div>
             <div className="bg-blue-700">
             <section className="h-auto max-w-full text-center " key={randomArrTwo[i]?.id+ "Two"} onClick={(event) => { clickedCard(event) }} data-card-name={randomArrTwo[i]?.name} data-card-id={randomArrTwo[i]?.id}>
               <h1>{randomArrTwo[i]?.name}</h1>
-              <img src={`${randomArrTwo[i]?.image}`} />
+              <img src={require(`${randomArrTwo[i]?.image}`)} />
             </section>
             </div>
           </>
