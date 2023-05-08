@@ -3,8 +3,8 @@ import lonneyCards from "./looney.json"
 
 // TO DO:
 // STYLING!!!!!!!
-// ADD STYLING FOR EACH CARD
 // ADD ICONS
+// FIX CLICK EVENTS  (MATCH)
 // Future developement:
 // PvP (take turns and time)
 // Single player
@@ -20,29 +20,30 @@ function Card() {
   let [currentClicked, setCurrentClick] = useState('')
   let [timer, setTimer] = useState(20); // 25 minutes
 
-  const clickedCard = (event) => {
-// issue from having same id attributes must find a way to seperate from one and other
-    setInterval(() => {
-      event.target.classList.add("hide")
-      event.target.parentElement.classList.add("bg-image")
-
-    }, 1000)
-    event.target.classList.remove("hide")
-    event.target.parentElement.classList.remove("bg-image")
-
-    setCurrentClick(event.target.getAttribute('data-card-id'))
-    // change if statement to reconize the different one and two option such as when clicked it 
-    // or check if i change curent clicked save to save the element
-    if (currentClicked !== '') {
-      if (currentClicked === event.target.getAttribute('data-card-id')) {
-        setScore(score = score + 1)
-        event.target.parentElement.classList.add("destroy")
-        document.querySelector(`[data-card-id="${currentClicked}"]`).parentElement.classList.add("destroy");
-        setCurrentClick('')
+const clickedCard = (event) => {
+  // issue from having same id attributes must find a way to seperate from one and other
+      setInterval(() => {
+        event.target.classList.add("hide")
+        event.target.parentElement.classList.add("bg-image")
+  
+      }, 1000)
+      event.target.classList.remove("hide")
+      event.target.parentElement.classList.remove("bg-image")
+      console.log(event.target)
+      setCurrentClick(event.target)
+      // change if statement to reconize the different one and two option such as when clicked it 
+      // or check if i change curent clicked save to save the element
+      if (currentClicked !== '') {
+        if (currentClicked.getAttribute('data-card-id') === event.target.getAttribute('data-card-id')) {
+          console.log("Match found")
+          // setScore(score = score + 1)
+          event.target.parentElement.classList.add("destroy")
+          currentClicked.parentElement.classList.add("destroy");
+          setCurrentClick('')
+        }
+  
       }
-
     }
-  }
   let clonedLoneyCards = lonneyCards
   Array.prototype.random = function () {
     let that = this.slice();
@@ -111,7 +112,6 @@ function Card() {
               <div className="bg-red-700 rounded p-5 custom-border bg-image">
                 {/* <img  src={require('./images/looney-logo.png')}/> */}
                 <section className="h-auto max-w-full text-center  hide" key={randomArrOne[i]?.i + "One"} onClick={(event) => { clickedCard(event) }} data-card-name={randomArrOne[i]?.name} data-card-id={randomArrOne[i]?.id}>
-
                   <h1 className="text-white">{randomArrOne[i]?.name}</h1>
 
                   <img className="m-0" src={require(`${randomArrOne[i]?.image}`)} />
