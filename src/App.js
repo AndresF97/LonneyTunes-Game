@@ -10,7 +10,7 @@ function App() {
       <Navbar/>
       <Routes>
         <Route
-        path='/LonneyTunes-Game/SingleGame'
+        path='/LonneyTunes-Game/Single'
         element={<GamePage/>}
         />
             <Route
