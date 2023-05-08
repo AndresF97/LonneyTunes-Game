@@ -11,8 +11,6 @@ import lonneyCards from "./looney.json"
 // AI chatgpt or another ai that can be implemented in React
 // STYLING NOTES:
 // - Look at the other website for reference
-// - bring some lonney logos
-// - get better images
 
 
 function Card() {
@@ -89,7 +87,7 @@ function Card() {
   }
 
   useEffect(() => {
-    startTimer()
+    // startTimer()
     setArrOne(clonedLoneyCards.random())
     setArrTwo(clonedLoneyCards.random())
   }, []);
@@ -99,22 +97,22 @@ function Card() {
       <h1>Quick find the matches</h1>
       <div id="timer">Timer:{timer}</div>
       <div>Score:{score}</div>
-      <div className="grid grid-cols-2 md:grid-cols-7 gap-4 dark:bg-gray-900" id="gameContainer">
+      <div className="grid grid-cols-2 md:grid-cols-7 gap-4 dark:bg-gray-900 m-5" id="gameContainer">
       {randomArrOne?.map((item, i) => {
         
       
         return (
           <>
-            <div className="bg-blue-700">
-            <section className="h-auto max-w-full text-center" key={randomArrOne[i]?.i +"One"} onClick={(event) => { clickedCard(event) }} data-card-name={randomArrOne[i]?.name} data-card-id={randomArrOne[i]?.id}>
-              <h1>{randomArrOne[i]?.name}</h1>
+            <div className="bg-red-700 rounded p-5 custom-border">
+            <section className="h-auto max-w-full text-center  hide" key={randomArrOne[i]?.i +"One"} onClick={(event) => { clickedCard(event) }} data-card-name={randomArrOne[i]?.name} data-card-id={randomArrOne[i]?.id}>
+              <h1 className="text-white">{randomArrOne[i]?.name}</h1>
               
               <img className="m-0" src={require(`${randomArrOne[i]?.image}`)} />
             </section>
             </div>
-            <div className="bg-blue-700">
-            <section className="h-auto max-w-full text-center " key={randomArrTwo[i]?.id+ "Two"} onClick={(event) => { clickedCard(event) }} data-card-name={randomArrTwo[i]?.name} data-card-id={randomArrTwo[i]?.id}>
-              <h1>{randomArrTwo[i]?.name}</h1>
+            <div className="bg-red-700 rounded p-5 custom-border">
+            <section className="h-auto max-w-full text-center hide" key={randomArrTwo[i]?.id+ "Two"} onClick={(event) => { clickedCard(event) }} data-card-name={randomArrTwo[i]?.name} data-card-id={randomArrTwo[i]?.id}>
+              <h1 className="text-white">{randomArrTwo[i]?.name}</h1>
               <img src={require(`${randomArrTwo[i]?.image}`)} />
             </section>
             </div>
