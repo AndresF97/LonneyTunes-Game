@@ -18,7 +18,7 @@ function Card() {
   let [randomArrOne, setArrOne] = useState([])
   let [randomArrTwo, setArrTwo] = useState([])
   let [currentClicked, setCurrentClick] = useState('')
-  let [timer, setTimer] = useState(2); // 25 minutes
+  let [timer, setTimer] = useState(60);
 
 const clickedCard = (event) => {
   // issue from having same id attributes must find a way to seperate from one and other
@@ -67,7 +67,7 @@ const clickedCard = (event) => {
   }
 
   const PlayAgain = () => {
-    window.location.reload()
+    window.location.rel()
   }
   const returnHomePage = () => {
     window.location.replace('/')

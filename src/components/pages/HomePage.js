@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 function HomePage(){
     const renderNewPage = ()=>{
         setInterval(() => {
-            window.location.replace('/SingleGame')
+            window.location.replace('/LonneyTunes-Game/SingleGame')
       
           }, 2000)
         
