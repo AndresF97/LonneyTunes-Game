@@ -2,37 +2,36 @@
 {
     "id": 1,
     "name": "Tasmanian-devil",
-    "image": "https://vignette.wikia.nocookie.net/looneytunes/images/e/e1/230px-Taz-Looney_Tunes_svg.png/revision/latest?cb=20130825180200"
-    
+    "image": "./images/taz.png"
   },
   {
     "id": 2,
     "name": "Bugs Bunny",
-    "image": "https://vignette.wikia.nocookie.net/looneytunes/images/2/26/Classic_bugsbunny.png/revision/latest?cb=20200127080157"
+    "image": "./images/bugs.png"
   },
   {
     "id": 3,
     "name": "Sylvester the Cat",
-    "image": "https://vignette.wikia.nocookie.net/looneytunes/images/8/88/Sylvester_the_Cat.png/revision/latest?cb=20130119144206"
+    "image": "./images/cat.png"
+  },
+  {
+    "id": 4,
+    "name": "Daffy Duck",
+    "image": "./images/daffy.png"
+  },
+  {
+    "id": 5,
+    "name": "Porky The Pig",
+    "image": "./images/Porky.png"
   },
   {
     "id": 6,
-    "name": "Daffy Duck",
-    "image": "https://vignette.wikia.nocookie.net/looneytunes/images/8/88/Daffy-1-.jpg/revision/latest?cb=20130825180446"
-  },
-  {
-    "id": 9,
-    "name": "Porky The Pig",
-    "image": "https://vignette.wikia.nocookie.net/looneytunes/images/f/fc/Porky_Pig.gif/revision/latest?cb=20160417194145"
-  },
-  {
-    "id": 10,
     "name": "Speedy Gonzales",
-    "image": "https://vignette.wikia.nocookie.net/looneytunes/images/4/46/SpeedyGonzales.png/revision/latest/scale-to-width-down/250?cb=20180519155226"
+    "image": "./images/speedy.png"
   },
   {
-    "id": 11,
+    "id": 7,
     "name": "Yosemity Sam",
-    "image": "https://vignette.wikia.nocookie.net/looneytunes/images/8/8c/Yosemite_Sam.png/revision/latest/scale-to-width-down/250?cb=20180523161541"
+    "image": "./images/sam.png"
   }
 ]

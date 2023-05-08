@@ -1,32 +1,81 @@
-.App {
-  text-align: center;
+/* Main Looney Colors */
+/* RED
+HEX: #E1393E
+RGB: (225, 57, 62)
+CMYK: (6, 92, 80, 1)
+PANTONE: PMS 1795 C */
+/* ORANGE
+HEX: #F9A13A
+RGB: (249, 161, 58)
+CMYK: (0, 43, 87, 0)
+PANTONE: PMS 1365 C */
+/* YELLOW
+HEX: #FFD51F
+RGB: (255, 213, 31)
+CMYK: (1, 14, 95, 0)
+PANTONE: PMS 115 C */
+/* BLACK
+HEX: #000000
+RGB: (0, 0, 0)
+CMYK: (60, 40, 40, 100)
+PANTONE: PMS BLACK 6 C */
+*{
+  font-family: 'Poppins', sans-serif;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.center-menu{
+ margin-top: 15%;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.main-bg{
+  background-image: url('./components/images/opening.jpeg');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  animation-duration: 1.5s;
+  /* animation: movingBg 2s; */
+  animation: movingBg 2s ;
+  background-position: center;
+  height: 80vh;
+  width: 100vw;
+  overflow: hidden;
+  scale: 0;
+  border-radius: 50px;
+}
+.card:hover{
+  animation: pulse 1.5s;
+}
+@keyframes pulse {
+  0% {
+    transform: scale(.85);
+  }
+  70% {
+    transform: scale(1);
+  }
+    100% {
+    transform: scale(1);
   }
 }
+.App {
+  text-align: center;
+  
+}
+body{
+  background-color: #FF9900;
+}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.custom-border{
+  border-style: solid;
+  border-width: 5px;
+  border-color: #FFD51F;
+  
+}
+.bg-image{
+  background-image: url('./components/images/cardLogo.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 130px 100px;
   color: white;
+  content: 'LETS PLAY!';
 }
 
-.App-link {
-  color: #61dafb;
-}
 .hide{
   opacity: 0;
 }
@@ -36,11 +85,11 @@
 img, h1{
   pointer-events: none;
 }
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+
+
+
+@keyframes movingBg {
+  90% {
+    scale: 1;
   }
 }
