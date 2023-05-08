@@ -7,31 +7,31 @@
   {
     "id": 2,
     "name": "Bugs Bunny",
-    "image": "./images/taz.png"
+    "image": "./images/bugs.png"
   },
   {
     "id": 3,
     "name": "Sylvester the Cat",
-    "image": "./images/taz.png"
+    "image": "./images/cat.png"
+  },
+  {
+    "id": 4,
+    "name": "Daffy Duck",
+    "image": "./images/daffy.png"
+  },
+  {
+    "id": 5,
+    "name": "Porky The Pig",
+    "image": "./images/Porky.png"
   },
   {
     "id": 6,
-    "name": "Daffy Duck",
-    "image": "./images/taz.png"
-  },
-  {
-    "id": 9,
-    "name": "Porky The Pig",
-    "image": "./images/taz.png"
-  },
-  {
-    "id": 10,
     "name": "Speedy Gonzales",
-    "image": "./images/taz.png"
+    "image": "./images/speedy.png"
   },
   {
-    "id": 11,
+    "id": 7,
     "name": "Yosemity Sam",
-    "image": "./images/taz.png"
+    "image": "./images/sam.png"
   }
 ]

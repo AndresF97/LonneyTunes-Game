@@ -102,8 +102,7 @@ function Card() {
       <div className="grid grid-cols-2 md:grid-cols-7 gap-4 dark:bg-gray-900" id="gameContainer">
       {randomArrOne?.map((item, i) => {
         
-        const imageOne = require(`${randomArrOne[i]?.image}`)
-        const imageTwo = require(`${randomArrTwo[i]?.image}`)
+      
         return (
           <>
             <div className="bg-blue-700">
