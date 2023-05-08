@@ -3,13 +3,14 @@ import lonneyCards from "./looney.json"
 
 // TO DO:
 // STYLING!!!!!!!
-// ADD ICONS
 // Future developement:
 // PvP (take turns and time)
 // Single player
 // AI chatgpt or another ai that can be implemented in React
-// STYLING NOTES:
+// FUTURE STYLING IMPLEMENTATIONS:
 // - Look at the other website for reference
+// - on hover of card its grows card
+// - Gameover function its own react page
 
 
 function Card() {
@@ -17,7 +18,7 @@ function Card() {
   let [randomArrOne, setArrOne] = useState([])
   let [randomArrTwo, setArrTwo] = useState([])
   let [currentClicked, setCurrentClick] = useState('')
-  let [timer, setTimer] = useState(3); // 25 minutes
+  let [timer, setTimer] = useState(60); // 25 minutes
 
 const clickedCard = (event) => {
   // issue from having same id attributes must find a way to seperate from one and other
@@ -110,7 +111,7 @@ const clickedCard = (event) => {
 
           return (
             <>
-              <div className="bg-red-700 rounded p-5 custom-border bg-image">
+              <div className="bg-red-700 rounded p-5 custom-border card bg-image">
                 {/* <img  src={require('./images/looney-logo.png')}/> */}
                 <section className="h-auto max-w-full text-center  hide" key={randomArrOne[i]?.i + "One"} onClick={(event) => { clickedCard(event) }} data-card-name={randomArrOne[i]?.name} data-card-id={randomArrOne[i]?.id}>
                   <h1 className="text-white">{randomArrOne[i]?.name}</h1>
@@ -118,7 +119,7 @@ const clickedCard = (event) => {
                   <img className="m-0" src={require(`${randomArrOne[i]?.image}`)} />
                 </section>
               </div>
-              <div className="bg-red-700 rounded p-5 custom-border bg-image">
+              <div className="bg-red-700 rounded p-5 custom-border card bg-image">
                 {/* <img src={require('./images/looney-logo.png')}/> */}
                 <section className="h-auto max-w-full text-center hide" key={randomArrTwo[i]?.id + "Two"} onClick={(event) => { clickedCard(event) }} data-card-name={randomArrTwo[i]?.name} data-card-id={randomArrTwo[i]?.id}>
                   <h1 className="text-white">{randomArrTwo[i]?.name}</h1>
