@@ -31,6 +31,8 @@ function Card() {
     event.target.parentElement.classList.remove("bg-image")
 
     setCurrentClick(event.target.getAttribute('data-card-id'))
+    // change if statement to reconize the different one and two option such as when clicked it 
+    // or check if i change curent clicked save to save the element
     if (currentClicked !== '') {
       if (currentClicked === event.target.getAttribute('data-card-id')) {
         setScore(score = score + 1)
@@ -100,7 +102,7 @@ function Card() {
       <h1>Quick find the matches</h1>
       <div id="timer">Timer:{timer}</div>
       <div>Score:{score}</div>
-      <div className="grid grid-cols-2 md:grid-cols-7 gap-4 dark:bg-gray-900 m-5" id="gameContainer">
+      <div className="grid grid-cols-2 md:grid-cols-7 gap-4  m-5" id="gameContainer">
         {randomArrOne?.map((item, i) => {
 
 
