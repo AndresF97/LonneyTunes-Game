@@ -18,7 +18,7 @@ function Card() {
   let [randomArrOne, setArrOne] = useState([])
   let [randomArrTwo, setArrTwo] = useState([])
   let [currentClicked, setCurrentClick] = useState('')
-  let [timer, setTimer] = useState(60); // 25 minutes
+  let [timer, setTimer] = useState(2); // 25 minutes
 
 const clickedCard = (event) => {
   // issue from having same id attributes must find a way to seperate from one and other
@@ -82,8 +82,8 @@ const clickedCard = (event) => {
       <h1>Game over!</h1>
       <img src=${image}/>
       <br></br>
-      <button id="gameOverBtn" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800" >Play Again</button>
-      <button id="returnBtn" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Go back home</button>
+      <button id="gameOverBtn" class=" text-white  bg-gray-800 hover:bg-gray-900 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800" >Play Again</button>
+      <button id="returnBtn" class="text-white bg-gray-800 hover:bg-gray-900 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Go back home</button>
     </div>
     `
     document.getElementById('gameOverBtn').onclick = function () {
