@@ -105,6 +105,7 @@ function Card() {
           <>
             <div className="bg-red-700 rounded p-5 custom-border">
             <section className="h-auto max-w-full text-center  hide" key={randomArrOne[i]?.i +"One"} onClick={(event) => { clickedCard(event) }} data-card-name={randomArrOne[i]?.name} data-card-id={randomArrOne[i]?.id}>
+              
               <h1 className="text-white">{randomArrOne[i]?.name}</h1>
               
               <img className="m-0" src={require(`${randomArrOne[i]?.image}`)} />
