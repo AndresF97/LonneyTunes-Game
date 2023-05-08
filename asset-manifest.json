@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/LonneyTunes-Game/static/css/main.1459ecdb.css",
+    "main.js": "/LonneyTunes-Game/static/js/main.21f94573.js",
+    "static/js/787.28cb0dcd.chunk.js": "/LonneyTunes-Game/static/js/787.28cb0dcd.chunk.js",
+    "static/media/looney-tunes-thats-all-folks.gif": "/LonneyTunes-Game/static/media/looney-tunes-thats-all-folks.feede0111e49857f98ab.gif",
+    "static/media/taz.png": "/LonneyTunes-Game/static/media/taz.8e44b60f38c12b2836e9.png",
+    "static/media/speedy.png": "/LonneyTunes-Game/static/media/speedy.08770f6706877228157c.png",
+    "static/media/Porky.png": "/LonneyTunes-Game/static/media/Porky.85b99074f907522da0c0.png",
+    "static/media/bugs.png": "/LonneyTunes-Game/static/media/bugs.7d3de974a8e22a525d4b.png",
+    "static/media/cardLogo.png": "/LonneyTunes-Game/static/media/cardLogo.47c73dc03ebc4077f00b.png",
+    "static/media/cat.png": "/LonneyTunes-Game/static/media/cat.8ed6d40eeb65e221c283.png",
+    "static/media/sam.png": "/LonneyTunes-Game/static/media/sam.eac74aa02bc39535da6a.png",
+    "static/media/daffy.png": "/LonneyTunes-Game/static/media/daffy.772a53a0dd3f6ccf4257.png",
+    "static/media/looney-logo.png": "/LonneyTunes-Game/static/media/looney-logo.9a170242d216aba9f76f.png",
+    "index.html": "/LonneyTunes-Game/index.html",
+    "main.1459ecdb.css.map": "/LonneyTunes-Game/static/css/main.1459ecdb.css.map",
+    "main.21f94573.js.map": "/LonneyTunes-Game/static/js/main.21f94573.js.map",
+    "787.28cb0dcd.chunk.js.map": "/LonneyTunes-Game/static/js/787.28cb0dcd.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1459ecdb.css",
+    "static/js/main.21f94573.js"
+  ]
+}
