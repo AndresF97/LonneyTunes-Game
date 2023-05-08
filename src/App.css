@@ -19,23 +19,35 @@ HEX: #000000
 RGB: (0, 0, 0)
 CMYK: (60, 40, 40, 100)
 PANTONE: PMS BLACK 6 C */
-
+*{
+  font-family: 'Poppins', sans-serif;
+}
+.center-menu{
+ margin-top: 15%;
+}
+.main-bg{
+  background-image: url('./components/images/opening.jpeg');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  animation-duration: 1.5s;
+  /* animation: movingBg 2s; */
+  animation: movingBg 2s ;
+  background-position: center;
+  height: 80vh;
+  width: 100vw;
+  overflow: hidden;
+  scale: 0;
+  border-radius: 50px;
+}
 
 .App {
   text-align: center;
+  
+}
+body{
+  background-color: #FF9900;
 }
 
-
-/* .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-} */
 .custom-border{
   border-style: solid;
   border-width: 5px;
@@ -47,6 +59,8 @@ PANTONE: PMS BLACK 6 C */
   background-repeat: no-repeat;
   background-position: center;
   background-size: 130px 100px;
+  color: white;
+  content: 'LETS PLAY!';
 }
 
 .hide{
@@ -59,3 +73,10 @@ img, h1{
   pointer-events: none;
 }
 
+
+
+@keyframes movingBg {
+  90% {
+    scale: 1;
+  }
+}

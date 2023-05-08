@@ -2,6 +2,15 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 function HomePage(){
+    const renderNewPage = ()=>{
+        setInterval(() => {
+            window.location.replace('/SingleGame')
+      
+          }, 2000)
+        
+        document.querySelector('.center-menu').innerHTML = ``
+        document.getElementById('mainMenu').classList.add('main-bg')
+    }
     // TO DO:
     // ADD ICONS
     // ADD MULTIPLE BUTTONS FOR THESE SPECIFIC OPTIONS:
@@ -9,16 +18,20 @@ function HomePage(){
     // - AI (Bring an AI to run different kind of fucntion to cheat and maybe use the tic tac to game)
 
     return(
-        <>
-            <h1>Home Page!</h1>
-            <Link to="/SingleGame">
-            <h4>Welcome to a looney toons memory clicky game, here are several game option's to play and some that are soon to come</h4>
-            <button type="button"className="mt-5 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+        <div className="text-center inline-flex items-center" id="mainMenu">
+        {/* add background here */}
+            <div className="center-menu">
+            <h4 className="text-4xl font-bold text-gray-900 dark:text-white">Welcome to a looney toons memory clicky game, here are several game option's to play and some that are soon to come</h4>
+            <h1 class="text-4xl font-bold text-gray-50 dark:text-white hide message"> LETS PLAY </h1>
+            {/* <Link to="/SingleGame"> */}
+            <br></br>
+            <button type="button" onClick={()=> renderNewPage()}className="text-white bg-[#24292F]  font-medium rounded-lg text-md px-5 py-2.5 text-center inline-flex items-center hover:bg-gray-500 focus:ring-4 focus:ring-gray-300">
             <i class="fa-solid fa-gamepad m-2"></i>
                 Play Solo!
             </button>
-            </Link>
-        </>
+            {/* </Link> */}
+            </div>
+        </div>
     )
 }
 

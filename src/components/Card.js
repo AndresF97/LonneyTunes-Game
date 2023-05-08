@@ -4,7 +4,6 @@ import lonneyCards from "./looney.json"
 // TO DO:
 // STYLING!!!!!!!
 // ADD ICONS
-// FIX CLICK EVENTS  (MATCH)
 // Future developement:
 // PvP (take turns and time)
 // Single player
@@ -18,7 +17,7 @@ function Card() {
   let [randomArrOne, setArrOne] = useState([])
   let [randomArrTwo, setArrTwo] = useState([])
   let [currentClicked, setCurrentClick] = useState('')
-  let [timer, setTimer] = useState(20); // 25 minutes
+  let [timer, setTimer] = useState(3); // 25 minutes
 
 const clickedCard = (event) => {
   // issue from having same id attributes must find a way to seperate from one and other
@@ -72,7 +71,7 @@ const clickedCard = (event) => {
   const returnHomePage = () => {
     window.location.replace('/')
   }
-
+  const image = require('./images/looney-tunes-thats-all-folks.gif')
   const gameOver = () => {
     document.getElementById('gameContainer').innerHTML = ""
     document.getElementById('gameContainer').classList.remove('grid', 'grid-cols-2', 'md:grid-cols-7', 'gap-4', 'dark:bg-gray-900')
@@ -80,6 +79,8 @@ const clickedCard = (event) => {
     <div className="text-center mr-5 ml-5">
     
       <h1>Game over!</h1>
+      <img src=${image}/>
+      <br></br>
       <button id="gameOverBtn" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800" >Play Again</button>
       <button id="returnBtn" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Go back home</button>
     </div>
@@ -93,16 +94,16 @@ const clickedCard = (event) => {
   }
 
   useEffect(() => {
-    // startTimer()
+    startTimer()
     setArrOne(clonedLoneyCards.random())
     setArrTwo(clonedLoneyCards.random())
   }, []);
 
   return (
-    <>
-      <h1>Quick find the matches</h1>
-      <div id="timer">Timer:{timer}</div>
-      <div>Score:{score}</div>
+    < >
+      <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Quick find the matches</h1>
+      <div id="timer" className="text-1xl font-bold text-gray-900 dark:text-white">Timer:{timer}</div>
+      <div className="text-1xl font-bold text-gray-900 dark:text-white">Score:{score}</div>
       <div className="grid grid-cols-2 md:grid-cols-7 gap-4  m-5" id="gameContainer">
         {randomArrOne?.map((item, i) => {
 
