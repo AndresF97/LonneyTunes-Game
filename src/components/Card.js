@@ -9,7 +9,6 @@ import lonneyCards from "./looney.json"
 // AI chatgpt or another ai that can be implemented in React
 // FUTURE STYLING IMPLEMENTATIONS:
 // - Look at the other website for reference
-// - on hover of card its grows card
 // - Gameover function its own react page
 
 
@@ -18,7 +17,8 @@ function Card() {
   let [randomArrOne, setArrOne] = useState([])
   let [randomArrTwo, setArrTwo] = useState([])
   let [currentClicked, setCurrentClick] = useState('')
-  let [timer, setTimer] = useState(60);
+  let [destroyedCounter, setCurrentDestroy] = useState(0)
+  let [timer, setTimer] = useState(100);
 
 const clickedCard = (event) => {
   // issue from having same id attributes must find a way to seperate from one and other
@@ -34,11 +34,13 @@ const clickedCard = (event) => {
       // change if statement to reconize the different one and two option such as when clicked it 
       // or check if i change curent clicked save to save the element
       if (currentClicked !== '') {
-        if (currentClicked.getAttribute('data-card-id') === event.target.getAttribute('data-card-id')) {
+        if (currentClicked.getAttribute('data-card-id') === event.target.getAttribute('data-card-id')&& currentClicked.getAttribute("data-card-num") !== event.target.getAttribute("data-card-num")) {
           console.log("Match found")
           // setScore(score = score + 1)
           event.target.parentElement.classList.add("destroy")
           currentClicked.parentElement.classList.add("destroy");
+          console.log(destroyedCounter)
+          setCurrentDestroy(destroyedCounter= destroyedCounter+1)
           setCurrentClick('')
         }
   
@@ -59,6 +61,9 @@ const clickedCard = (event) => {
         clearInterval(countDown)
         gameOver()
         return
+      }else if(destroyedCounter===6){
+        clearInterval(countDown)
+        gameOver()
       } else {
         setTimer(timer--);
         console.log(timer)
@@ -67,11 +72,14 @@ const clickedCard = (event) => {
   }
 
   const PlayAgain = () => {
-    window.location.rel()
+    window.location.reload()
   }
   const returnHomePage = () => {
     window.location.replace('/')
   }
+  // Check singles cards
+  // end timer when done with the game
+  // if 24 items have been deleted stop timer
   const image = require('./images/looney-tunes-thats-all-folks.gif')
   const gameOver = () => {
     document.getElementById('gameContainer').innerHTML = ""
@@ -113,7 +121,7 @@ const clickedCard = (event) => {
             <>
               <div className="bg-red-700 rounded p-5 custom-border card bg-image">
                 {/* <img  src={require('./images/looney-logo.png')}/> */}
-                <section className="h-auto max-w-full text-center  hide" key={randomArrOne[i]?.i + "One"} onClick={(event) => { clickedCard(event) }} data-card-name={randomArrOne[i]?.name} data-card-id={randomArrOne[i]?.id}>
+                <section className="h-auto max-w-full text-center  hide" key={randomArrOne[i]?.i + "One"} onClick={(event) => { clickedCard(event) }} data-card-name={randomArrOne[i]?.name} data-card-num={"A"+randomArrTwo[i]?.id} data-card-id={randomArrOne[i]?.id}>
                   <h1 className="text-white">{randomArrOne[i]?.name}</h1>
 
                   <img className="m-0" src={require(`${randomArrOne[i]?.image}`)} />
@@ -121,7 +129,7 @@ const clickedCard = (event) => {
               </div>
               <div className="bg-red-700 rounded p-5 custom-border card bg-image">
                 {/* <img src={require('./images/looney-logo.png')}/> */}
-                <section className="h-auto max-w-full text-center hide" key={randomArrTwo[i]?.id + "Two"} onClick={(event) => { clickedCard(event) }} data-card-name={randomArrTwo[i]?.name} data-card-id={randomArrTwo[i]?.id}>
+                <section className="h-auto max-w-full text-center hide" key={randomArrTwo[i]?.id + "Two"} onClick={(event) => { clickedCard(event) }} data-card-name={randomArrTwo[i]?.name}  data-card-num={"B"+randomArrTwo[i]?.id} data-card-id={randomArrTwo[i]?.id}>
                   <h1 className="text-white">{randomArrTwo[i]?.name}</h1>
                   <img src={require(`${randomArrTwo[i]?.image}`)} />
                 </section>
