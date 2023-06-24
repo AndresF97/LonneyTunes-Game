@@ -18,8 +18,8 @@ function Card() {
   let [randomArrTwo, setArrTwo] = useState([])
   let [currentClicked, setCurrentClick] = useState('')
   let [destroyedCounter, setCurrentDestroy] = useState(0)
-  let [timer, setTimer] = useState(100);
-
+  let [timer, setTimer] = useState(60);
+  let countDown;
 const clickedCard = (event) => {
   // issue from having same id attributes must find a way to seperate from one and other
       setInterval(() => {
@@ -37,11 +37,16 @@ const clickedCard = (event) => {
         if (currentClicked.getAttribute('data-card-id') === event.target.getAttribute('data-card-id')&& currentClicked.getAttribute("data-card-num") !== event.target.getAttribute("data-card-num")) {
           console.log("Match found")
           // setScore(score = score + 1)
+          setCurrentDestroy(destroyedCounter= destroyedCounter+1)
           event.target.parentElement.classList.add("destroy")
           currentClicked.parentElement.classList.add("destroy");
           console.log(destroyedCounter)
-          setCurrentDestroy(destroyedCounter= destroyedCounter+1)
+          // setCurrentDestroy(destroyedCounter= destroyedCounter+1)
           setCurrentClick('')
+          if(destroyedCounter==7){
+            clearInterval(countDown)
+            gameOver()
+          }
         }
   
       }
@@ -56,15 +61,12 @@ const clickedCard = (event) => {
     return result
   }
   const startTimer = () => {
-    let countDown = setInterval(() => {
+    countDown = setInterval(() => {
       if (timer < 0) {
         clearInterval(countDown)
         gameOver()
         return
-      }else if(destroyedCounter===6){
-        clearInterval(countDown)
-        gameOver()
-      } else {
+      }else {
         setTimer(timer--);
         console.log(timer)
       }
@@ -75,7 +77,7 @@ const clickedCard = (event) => {
     window.location.reload()
   }
   const returnHomePage = () => {
-    window.location.replace('/')
+    window.location.replace('/LonneyTunes-Game')
   }
   // Check singles cards
   // end timer when done with the game
