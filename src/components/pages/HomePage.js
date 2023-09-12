@@ -12,7 +12,7 @@ function HomePage(){
         document.getElementById('mainMenu').classList.add('main-bg')
     }
     // TO DO:
-    // ADD ICONS
+    // ADD BUGS LOGO ON THE CENTER
     // ADD MULTIPLE BUTTONS FOR THESE SPECIFIC OPTIONS:
     // - PvP (Make different Page for with different functionality)
     // - AI (Bring an AI to run different kind of fucntion to cheat and maybe use the tic tac to game)
