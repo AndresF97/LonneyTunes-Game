@@ -20,6 +20,7 @@ function HomePage(){
     return(
         <div className="text-center inline-flex items-center" id="mainMenu">
         {/* add background here */}
+        <h1>Hello</h1>
             <div className="center-menu">
             <h4 className="text-4xl font-bold text-gray-900 dark:text-white">Welcome to a looney toons memory clicky game, here are several game option's to play and some that are soon to come</h4>
             <h1 class="text-4xl font-bold text-gray-50 dark:text-white hide message"> LETS PLAY </h1>
